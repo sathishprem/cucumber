@@ -1,0 +1,262 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 6299630791,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User click on add customer button",
+            "match": {
+              "location": "AddCustomerSteps.user_click_on_add_customer_button()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 23005791297,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hook.beforeBackground()"
+            }
+          }
+        ],
+        "line": 15,
+        "name": "validate add customer module with oneDim list",
+        "description": "",
+        "id": "add-customer-feature;validate-add-customer-module-with-onedim-list",
+        "after": [
+          {
+            "result": {
+              "duration": 155231794,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hook.browserQuit()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 941687668,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "User enters all the field with oneDim",
+            "match": {
+              "location": "AddCustomerSteps.user_enters_all_the_field_with_oneDim(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "karthi",
+                  "rajan",
+                  "kr@gmail.com",
+                  "tanjore",
+                  "34562123341"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1234230093,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "User click on submit button",
+            "match": {
+              "location": "AddCustomerSteps.user_click_on_submit_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 327810173,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "User should be displayed customer id",
+            "match": {
+              "location": "AddCustomerSteps.user_should_be_displayed_customer_id()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@ab"
+          },
+          {
+            "name": "@bc"
+          }
+        ]
+      },
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 4057677451,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User click on add customer button",
+            "match": {
+              "location": "AddCustomerSteps.user_click_on_add_customer_button()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 12656272862,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hook.beforeBackground()"
+            }
+          }
+        ],
+        "line": 22,
+        "name": "validate add customer module with oneDim list",
+        "description": "",
+        "id": "add-customer-feature;validate-add-customer-module-with-onedim-list",
+        "after": [
+          {
+            "result": {
+              "duration": 70912670,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hook.browserQuit()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 776668127,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "User enters all the field with oneDimMap",
+            "match": {
+              "location": "AddCustomerSteps.user_enters_all_the_field_with_oneDimMap(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "fname",
+                  "karthi"
+                ]
+              },
+              {
+                "cells": [
+                  "lname",
+                  "rajan"
+                ]
+              },
+              {
+                "cells": [
+                  "mail",
+                  "rajan@gmail.com"
+                ]
+              },
+              {
+                "cells": [
+                  "addr",
+                  "peravurani"
+                ]
+              },
+              {
+                "cells": [
+                  "phno",
+                  "12347893533"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1830430479,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "User click on submit button",
+            "match": {
+              "location": "AddCustomerSteps.user_click_on_submit_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 94342392,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "User should be displayed customer id",
+            "match": {
+              "location": "AddCustomerSteps.user_should_be_displayed_customer_id()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@bc"
+          }
+        ]
+      }
+    ],
+    "name": "Add Customer feature",
+    "description": "",
+    "id": "add-customer-feature",
+    "keyword": "Feature",
+    "uri": "src/test/resources/Features/AddCustomer.feature",
+    "tags": [
+      {
+        "name": "@regression",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]

@@ -1,2 +1,0 @@
-src/test/resources/Features/AddCustomer.feature:9:33
-src/test/resources/Features/AddTariffPlan.feature:9:38

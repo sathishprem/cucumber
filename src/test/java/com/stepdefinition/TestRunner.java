@@ -12,8 +12,8 @@ import cucumber.api.junit.Cucumber;
 		glue = "com.stepdefinition",
 		monochrome = true,
 		dryRun = false,
-		plugin = {"html:target","rerun:src/test/resources/failed.txt"},
-		tags = {"@sanity"}
+		plugin = {"html:target","rerun:src/test/resources/failed.txt","json:target/reports.json"},
+		tags = {"@bc"}
 		)
 
 public class TestRunner {

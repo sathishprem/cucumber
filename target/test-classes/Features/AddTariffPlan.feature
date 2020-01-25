@@ -1,4 +1,4 @@
-@ab @bc
+@ab 
 Feature: Add Tariff Plan
 
  Background:
