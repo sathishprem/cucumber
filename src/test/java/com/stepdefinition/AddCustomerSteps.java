@@ -2,51 +2,119 @@ package com.stepdefinition;
 
 
 
+import java.util.List;
+import java.util.Map;
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import com.objectrepository.AddCustomerPage;
+import com.objectrepository.HomePage;
+import com.resources.FunctionalLibrary;
+
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import io.cucumber.datatable.DataTable;
 
-public class AddCustomerSteps {
+public class AddCustomerSteps extends FunctionalLibrary {
 	
-	static WebDriver driver;
+            HomePage hp=new HomePage();
+            AddCustomerPage acp=new AddCustomerPage();
 	
-	@Given("User launches telecom home page")
-	public void user_launches_telecom_home_page() {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\prem kumar\\Downloads\\cucumber\\driver\\chromedriver.exe");
-	    driver=new ChromeDriver();
-		driver.get("http://demo.guru99.com/telecom/index.html");
-	  
-	}
+
 
 	@Given("User click on add customer button")
 	public void user_click_on_add_customer_button() {
 	    
-		driver.findElement(By.xpath("(//a[text()='Add Customer'])[1]")).click();
+		button(hp.getCustomerButton());
+
 		
 	}
 
 	@When("User enters all the fields")
 	public void user_enters_all_the_fields() {
 		
-		driver.findElement(By.xpath("//label[text()='Done']")).click();
-		driver.findElement(By.id("fname")).sendKeys("java");
-		driver.findElement(By.id("lname")).sendKeys("selenium");
-		driver.findElement(By.id("email")).sendKeys("java@gmail.com");
-		driver.findElement(By.name("addr")).sendKeys("thoraipakkam");
-		driver.findElement(By.id("telephoneno")).sendKeys("123456789");
+         button(acp.getDoneButton());
+         insertText(acp.getFirstName(), "karthi");
+         insertText(acp.getLastName(), "rajan");
+         insertText(acp.getMail(), "kkk@gmail.com");
+         insertText(acp.getAddress(), "tanjore");
+         insertText(acp.getPhno(), "12553336665");
 		
 	  
 	}
+	
+	@When("User enters all the field with oneDim")
+	public void user_enters_all_the_field_with_oneDim(DataTable datas) {
+		
+		List<String> cusData = datas.asList(String.class);
+		
+		driver.findElement(By.xpath("//label[text()='Done']")).click();
+		insertText(acp.getFirstName(), cusData.get(0));
+		driver.findElement(By.id("lname")).sendKeys(cusData.get(1));
+		driver.findElement(By.id("email")).sendKeys(cusData.get(2));
+		driver.findElement(By.name("addr")).sendKeys(cusData.get(3));
+		driver.findElement(By.id("telephoneno")).sendKeys(cusData.get(4));
+		
+
+	}
+	
+	@When("User enters all the field with oneDimMap")
+	public void user_enters_all_the_field_with_oneDimMap(DataTable datas) {
+		
+		Map<String, String> cusData = datas.asMap(String.class, String.class);
+		
+		driver.findElement(By.xpath("//label[text()='Done']")).click();
+		driver.findElement(By.id("fname")).sendKeys(cusData.get("fname"));
+		driver.findElement(By.id("lname")).sendKeys(cusData.get("lname"));
+		driver.findElement(By.id("email")).sendKeys(cusData.get("mail"));
+		driver.findElement(By.name("addr")).sendKeys(cusData.get("addr"));
+		driver.findElement(By.id("telephoneno")).sendKeys(cusData.get("phno"));
+		
+
+	}
+	
+	@When("User enters all the field with twoDim")
+	public void user_enters_all_the_field_with_twoDim(DataTable datas) {
+		
+         List<List<String>> cusData = datas.asLists(String.class);
+         
+         ////label[text()='Done']
+		
+		driver.findElement(By.xpath("//label[text()='Done']")).click();
+		driver.findElement(By.id("fname")).sendKeys(cusData.get(2).get(0));
+		driver.findElement(By.id("lname")).sendKeys(cusData.get(1).get(1));
+		driver.findElement(By.id("email")).sendKeys(cusData.get(3).get(2));
+		driver.findElement(By.name("addr")).sendKeys(cusData.get(0).get(3));
+		driver.findElement(By.id("telephoneno")).sendKeys(cusData.get(2).get(4));
+		
+
+	}
+	
+	@When("User enters all the field with twoDimMap")
+	public void user_enters_all_the_field_with_twoDimMap(DataTable datas) {
+		
+        List<Map<String, String>> cusData = datas.asMaps(String.class,String.class);
+		
+		driver.findElement(By.xpath("//label[text()='Done']")).click();
+		driver.findElement(By.id("fname")).sendKeys(cusData.get(1).get("fname"));
+		driver.findElement(By.id("lname")).sendKeys(cusData.get(1).get("lname"));
+		driver.findElement(By.id("email")).sendKeys(cusData.get(3).get("email"));
+		driver.findElement(By.name("addr")).sendKeys(cusData.get(0).get("address"));
+		driver.findElement(By.id("telephoneno")).sendKeys(cusData.get(2).get("phno"));
+		
+
+	}
+
 
 	@When("User click on submit button")
 	public void user_click_on_submit_button() {
 		
-		driver.findElement(By.name("submit")).click();
+           button(acp.getSubmitButton());
+
 	 
 	}
 
